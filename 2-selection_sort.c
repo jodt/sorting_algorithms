@@ -11,7 +11,7 @@
  */
 void selection_sort(int *array, size_t size)
 {
-	if (size > 1)
+	if (size > 1 && array)
 	{
 		size_t i = 0;
 		size_t j = 0;
@@ -42,6 +42,12 @@ void selection_sort(int *array, size_t size)
 			{
 				print_array(array, size);
 			}
-		}
-	}
-}
+		}}
+	else if (size == 2)
+	{
+		if (array[0] > array[1])
+{
+			size_t value = array[0];
+
+			array[0] = array[1];
+			array[1] = value; }}}
