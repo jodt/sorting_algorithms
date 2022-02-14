@@ -17,12 +17,13 @@ void selection_sort(int *array, size_t size)
 		size_t j = 0;
 		size_t index = 0;
 		size_t value = 0;
-		size_t j_comp;
-		size_t comp_value;
+		size_t j_comp = 0;
+		size_t comp_value = 0;
 
 		for (i = 0; i < size - 1; i++)
 		{
 			value = array[i];
+			comp_value = array[i];
 			for (j = i + 1; j < size; j++)
 			{
 				if (array[i] > array[j])
@@ -35,11 +36,10 @@ void selection_sort(int *array, size_t size)
 					}
 				}
 			}
-			comp_value = array[i];
-			array[index] = array[i];
-			array[i] = value;
 			if (comp_value != value)
 			{
+				array[index] = comp_value;
+				array[i] = value;
 				print_array(array, size);
 			}
 		}
