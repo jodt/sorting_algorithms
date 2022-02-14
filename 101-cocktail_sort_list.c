@@ -7,10 +7,10 @@
  */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *current, *the_next;
+	listint_t *current, *the_next, *depart, *arrive;
 	int swap = TRUE;
 
-	current = *list, the_next = current->next;
+	current = depart = arrive = *list, the_next = current->next;
 	if (!list || !*list || (!(*list)->next && !(*list)->prev))
 		return;
 	if (!the_next->next)
@@ -20,32 +20,34 @@ void cocktail_sort_list(listint_t **list)
 		print_list(*list);
 		return;
 	}
+	while (arrive->next)
+		arrive = arrive->next;
 	while (swap)
 	{
-		while (the_next->next)
+		while (the_next != arrive)
 		{
 			swap = FALSE;
 			if (current->n > the_next->n)
 			{
 				swap_node(list, current, the_next);
-				print_list(*list);
-				reset_position_pointer(&current, &the_next);
+				print_list(*list), reset_position_pointer(&current, &the_next);
 				swap = TRUE;
 			}
 			the_next = the_next->next, current = current->next;
 		}
-		while (current->prev)
+		arrive = current;
+		while (current != depart)
 		{
 			swap = FALSE;
 			if (current->n > the_next->n)
 			{
 				swap_node(list, current, the_next);
-				print_list(*list);
-				reset_position_pointer(&current, &the_next);
+				print_list(*list), reset_position_pointer(&current, &the_next);
 				swap = TRUE;
 			}
 			current = current->prev, the_next = the_next->prev;
 		}
+		depart = the_next;
 	}
 }
 
