@@ -26,11 +26,11 @@ void bubble_sort(int *array, size_t size)
 				j = i + 1;
 				if (array[i] > array[j])
 				{
-					print_array(array, size);
 					val = array[i];
 					array[i] = array[j];
 					array[j] = val;
 					more = 1;
+					print_array(array, size);
 				}
 			}
 		}
