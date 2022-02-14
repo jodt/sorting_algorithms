@@ -11,35 +11,38 @@
  */
 void selection_sort(int *array, size_t size)
 {
-	size_t i = 0;
-	size_t j = 0;
-	size_t index;
-	size_t value;
-	size_t j_comp;
-	size_t comp_value;
-
-	for (i = 0; i < size - 1; i++)
+	if (size > 1)
 	{
-		value = array[i];
-		for (j = i + 1; j < size; j++)
+		size_t i = 0;
+		size_t j = 0;
+		size_t index;
+		size_t value;
+		size_t j_comp;
+		size_t comp_value;
+
+		for (i = 0; i < size - 1; i++)
 		{
-			if (array[i] > array[j])
+			value = array[i];
+			for (j = i + 1; j < size; j++)
 			{
-				j_comp = array[j];
-				if (value > j_comp)
+				if (array[i] > array[j])
 				{
-					index = j;
-					value = array[j];
+					j_comp = array[j];
+					if (value > j_comp)
+					{
+						index = j;
+						value = array[j];
+					}
 				}
 			}
-		}
-		comp_value = array[i];
+			comp_value = array[i];
 
-		array[index] = array[i];
-		array[i] = value;
-		if (comp_value != value)
-		{
-			print_array(array, size);
+			array[index] = array[i];
+			array[i] = value;
+			if (comp_value != value)
+			{
+				print_array(array, size);
+			}
 		}
 	}
 }
