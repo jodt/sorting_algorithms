@@ -1,5 +1,4 @@
 #include "sort.h"
-
 /**
  * quick_sort - sorts an array of integers in ascending
  * order using the Quick sort algorithm
@@ -12,7 +11,6 @@ void quick_sort(int *array, size_t size)
 		return;
 	quicksort(array, 0, size - 1, size);
 }
-
 /**
  * quicksort - sort array on each side of the pivot
  *
@@ -58,7 +56,6 @@ int partition(int *array, int low, int high, size_t size)
 	swap_int(array, (i + 1), high, size);
 	return (i + 1);
 }
-
 /**
  * swap_int - swap values in the array
  * @array: intergers array
@@ -69,9 +66,12 @@ int partition(int *array, int low, int high, size_t size)
 void swap_int(int *array, int x, int y, size_t size)
 {
 	int temp;
-
 	temp = array[x];
-	array[x] = array[y];
-	array[y] = temp;
-	print_array(array, size);
+	if (array[x] != array[y])
+	{
+		array[x] = array[y];
+		array[y] = temp;
+
+		print_array(array, size);
+	}
 }
