@@ -23,6 +23,7 @@ void insertion_sort_list(listint_t **list)
 			temp->prev = NULL;
 			temp->next = *list;
 			*list = temp;
+			print_list(*list);
 		}
 		return;
 	}
