@@ -36,7 +36,6 @@ void selection_sort(int *array, size_t size)
 				}
 			}
 			comp_value = array[i];
-
 			array[index] = array[i];
 			array[i] = value;
 			if (comp_value != value)
