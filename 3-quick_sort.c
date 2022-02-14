@@ -66,6 +66,7 @@ int partition(int *array, int low, int high, size_t size)
 void swap_int(int *array, int x, int y, size_t size)
 {
 	int temp;
+
 	temp = array[x];
 	if (array[x] != array[y])
 	{
