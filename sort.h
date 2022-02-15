@@ -38,6 +38,7 @@ void swap_value(int *x, int *y);
 void cocktail_sort_list(listint_t **list);
 void swap_node(listint_t **list, listint_t *node1, listint_t *node2);
 void reset_position_pointer(listint_t **current, listint_t **next);
+int len_list(listint_t **list);
 void counting_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
 void swap_val(int *array, int *x, int *y, size_t size);
