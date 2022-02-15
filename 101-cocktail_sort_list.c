@@ -10,9 +10,10 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *current, *the_next;
 	int swap = TRUE;
 
-	current = *list, the_next = current->next;
+
 	if (!list || !*list || (!(*list)->next && !(*list)->prev))
 		return;
+	current = *list, the_next = current->next;
 	if (!the_next->next)
 	{
 		if (current->n > the_next->n)
