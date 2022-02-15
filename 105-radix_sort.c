@@ -37,7 +37,6 @@ void radix_sort(int *array, size_t size)
 			divisor *= 10;
 			loop--;
 		}
-
 		free(sorted_array);
 	}
 }
@@ -51,7 +50,7 @@ void radix_sort(int *array, size_t size)
  */
 int find_bigger_number(int *array, size_t size)
 {
-	int max_value, i = 0, loop = 0;
+	int max_value, i = 0, loop = 1;
 
 	max_value = array[i];
 	for (i = 1; i < (int)size; i++)
@@ -59,7 +58,7 @@ int find_bigger_number(int *array, size_t size)
 		if (array[i] > max_value)
 			max_value = array[i];
 	}
-	while (max_value % 10)
+	while (max_value / 10)
 	{
 		loop++;
 		max_value /= 10;
