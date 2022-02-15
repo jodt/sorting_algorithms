@@ -42,4 +42,6 @@ void counting_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
 void swap_val(int *array, int *x, int *y, size_t size);
 void heapify(int *array, int i, int n, size_t size);
+void radix_sort(int *array, size_t size);
+int find_bigger_number(int *array, size_t size);
 #endif /* __SORT_H__*/
