@@ -20,8 +20,11 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+/* Display functions*/
 void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
+
+/* sort functions*/
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
@@ -36,5 +39,7 @@ void cocktail_sort_list(listint_t **list);
 void swap_node(listint_t **list, listint_t *node1, listint_t *node2);
 void reset_position_pointer(listint_t **current, listint_t **next);
 void counting_sort(int *array, size_t size);
-
+void heap_sort(int *array, size_t size);
+void swap_val(int *array, int *x, int *y, size_t size);
+void heapify(int *array, int i, int n, size_t size);
 #endif /* __SORT_H__*/
