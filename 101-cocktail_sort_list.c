@@ -1,5 +1,4 @@
 #include "sort.h"
-int len_list(listint_t **list);
 /**
  *cocktail_sort_list - sorts a doubly linked list of integers
  * in ascending order using the Cocktail shaker sort algorithm.
@@ -27,33 +26,24 @@ void cocktail_sort_list(listint_t **list)
 			swap = FALSE;
 			if (current->n > the_next->n)
 			{
-				swap_node(list, current, the_next);
-				print_list(*list);
-				reset_position_pointer(&current, &the_next);
-				swap = TRUE;
+				swap_node(list, current, the_next), swap = TRUE;
+				print_list(*list), reset_position_pointer(&current, &the_next);
 			}
 			if (the_next->next)
-			{
 				the_next = the_next->next, current = current->next;
-			}
 		}
-
 		end--;
-
 		for (; i > begin; i--)
 		{
 			swap = FALSE;
 			if (current->n > the_next->n)
 			{
-				swap_node(list, current, the_next);
-				print_list(*list);
-				reset_position_pointer(&current, &the_next);
-				swap = TRUE;
+				swap_node(list, current, the_next), swap = TRUE;
+				print_list(*list), reset_position_pointer(&current, &the_next);
 			}
 			if (current->prev)
 				current = current->prev, the_next = the_next->prev;
 		}
-
 		begin++;
 	}
 }
@@ -93,7 +83,12 @@ void reset_position_pointer(listint_t **current, listint_t **next)
 	*next = *current;
 	*current = temp;
 }
-
+/**
+ * len_list - returns length of the list
+ * @list: linked list
+ *
+ * Return: length of the list
+ */
 int len_list(listint_t **list)
 {
 	listint_t *temp;
@@ -105,5 +100,5 @@ int len_list(listint_t **list)
 		temp = temp->next;
 		len++;
 	}
-	return len;
+	return (len);
 }
