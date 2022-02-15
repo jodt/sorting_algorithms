@@ -26,7 +26,6 @@ void counting_sort(int *array, size_t size)
 		{
 			return;
 		}
-
 		for (i = 0; i < k; i++)
 		{
 			for (j = 0; j < n_size; j++)
@@ -34,8 +33,7 @@ void counting_sort(int *array, size_t size)
 				if (i == array[j])
 				{
 					counter += 1;
-				}
-			}
+				}}
 			new[i] = counter;
 		}
 		counter = 0;
@@ -46,9 +44,7 @@ void counting_sort(int *array, size_t size)
 				array[l] = i;
 				counter += 1;
 				l++;
-			}
-		}
+			}}
 		print_array(new, k);
 		free(new);
-	}
-}
+	}}
