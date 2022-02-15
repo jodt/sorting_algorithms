@@ -10,7 +10,6 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *current, *the_next;
 	int swap = TRUE;
 
-
 	if (!list || !*list || (!(*list)->next && !(*list)->prev))
 		return;
 	current = *list, the_next = current->next;
